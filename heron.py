@@ -1,4 +1,7 @@
 # Code by Fernando Assad and Pedro Squisati
+# Just a Discord Bot that can help with math 
+
+# Still under development
 
 import discord, matplotlib.pyplot as plt, numpy as np
 from math import *
