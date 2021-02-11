@@ -15,5 +15,5 @@ for i in range(10):
 
 print("Past:")
 print(previous_table)
-print("Current:")
+print("Current: table")
 print(table)
