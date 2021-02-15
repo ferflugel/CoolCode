@@ -1,6 +1,6 @@
 # flutter_toy
 
-A new Flutter project.
+I am using Flutter Toy to practice Flutter skills.
 
 ## Getting Started
 
