@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hey Guys',
+      theme: ThemeData(
+        primaryColor: Colors.red,
+      ),
       home: RandomWords(),
     );
   }
@@ -72,7 +75,7 @@ class RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hey Guys'),
+        title: Text('Suggestions for Name'),
         actions: <Widget>[      // Add 3 lines from here...
           IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
         ],                      // ... to here.
@@ -82,9 +85,10 @@ class RandomWordsState extends State<RandomWords> {
   }
   // #enddocregion RWS-build
   // #docregion RWS-var
-  void _pushSaved() {
+
+  void _pushSaved() { // THIS IS THE CODE THAT CREATES THE SECOND PAGE
     Navigator.of(context).push(
-      MaterialPageRoute<void>(   // Add 20 lines from here...
+      MaterialPageRoute<void>(   
       builder: (BuildContext context) {
         final Iterable<ListTile> tiles = _saved.map(
           (WordPair pair) {
@@ -103,14 +107,14 @@ class RandomWordsState extends State<RandomWords> {
           )
           .toList();
 
-        return Scaffold(         // Add 6 lines from here...
+        return Scaffold(        
           appBar: AppBar(
             title: Text('Saved Suggestions'),
           ),
           body: ListView(children: divided),
-        );                       // ... to here.
+        );
       },
-    ),                       // ... to here.
+    ),
   );
   }
 }
