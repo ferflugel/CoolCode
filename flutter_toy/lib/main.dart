@@ -1,3 +1,5 @@
+// Code that serves as base for Talent Funding prototype
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
