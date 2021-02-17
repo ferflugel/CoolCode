@@ -21,7 +21,8 @@ class PrototypeState extends State<Prototype> {
   Widget build(BuildContext context) {
     return Scaffold (
       appBar: AppBar(
-        title: Text('Prototype'), // Changes the name on top
+        title: Text('Prototype'),
+      ),
       body: buildHeaders(),
     );
   }
