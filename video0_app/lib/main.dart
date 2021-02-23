@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Aula 0'),
     );
   }
 }
@@ -28,12 +28,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -41,13 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+              Text(
+              'Bem vindo ao',
+              style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold)
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            Image.asset('logo.jpg'),
           ],
         ),
       ),
