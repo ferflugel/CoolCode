@@ -1,4 +1,4 @@
-L = range(104, 0, -1)
+L = range(NUMBER, 0, -1)
 def multiple_prints(_list):
     try:
         dummy = 100 / _list[0]
