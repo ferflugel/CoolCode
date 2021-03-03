@@ -1,5 +1,4 @@
 // Code that serves as base for Talent Funding prototype
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -15,39 +14,55 @@ class MyApp extends StatelessWidget {
 }
 
 class PrototypeState extends State<Prototype> {
-  final List<String> headers = ["Home", "Forum", "Profile", "Exit"]; // Elements
-  final TextStyle _biggerFont = const TextStyle(fontSize: 18);
+  int _selectedPage = 1;
+  List _pageOptions = [
+    Text('Forum', style: TextStyle(fontSize: 20)),
+    HomePage(),
+    Text('Profile', style: TextStyle(fontSize: 20))
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
-        title: Text('Prototype'),
+        title: Text('Talent Funding'),
       ),
-      body: buildHeaders(),
+      body: Center(
+        child: _pageOptions[_selectedPage],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedPage,
+        onTap: (int index) {
+          setState(() {
+            _selectedPage = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: "Forum",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+          )
+        ],
+      ),
     );
   }
 
-  Widget buildHeaders() {
-    // iterates over all list items
-    return ListView.builder(
-        itemCount: 2 * headers.length, // Specify the length of the list
-        padding: const EdgeInsets.all(16),
-        itemBuilder: (BuildContext _context, int i) {
-          if (i.isOdd) {
-            return Divider();
-          }
-          final int index = i ~/ 2;
-          return buildRow(headers[index]);
-        });
-  }
+}
 
-  Widget buildRow(String element) {
-    return ListTile(
-      title: Text(
-        element,
-        style: _biggerFont,
-      ),
-    );
+class HomePage extends StatelessWidget
+{
+  @override 
+  Widget build(BuildContext context)
+  {
+    return Text('Homepage', style: TextStyle(fontSize: 20));
   }
 }
 
