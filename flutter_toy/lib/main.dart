@@ -57,6 +57,7 @@ class PrototypeState extends State<Prototype> {
 
 }
 
+// This is the class that will define the HomePage 
 class HomePage extends StatelessWidget
 {
   @override 
