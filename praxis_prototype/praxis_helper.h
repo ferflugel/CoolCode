@@ -18,6 +18,8 @@ struct piece
 
 void create_weardrobe(struct weardrobe** wear, int size);
 
-void add_item(struct weardrobe* wear, int position, char* name, int category);
+void add_item(struct weardrobe* wear, int position, char* name, int category, int *matches);
+
+int find_match(struct weardrobe* wear, int position);
 
 #endif 
