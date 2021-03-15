@@ -9,6 +9,7 @@ struct weardrobe
 
 struct piece 
 {
+    char *name;
     int category;
     char *color;
     char *texture;
@@ -16,5 +17,7 @@ struct piece
 };
 
 void create_weardrobe(struct weardrobe** wear, int size);
+
+void add_item(struct weardrobe* wear, int position, char* name, int category);
 
 #endif 
