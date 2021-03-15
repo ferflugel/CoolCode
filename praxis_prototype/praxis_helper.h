@@ -9,16 +9,18 @@ struct weardrobe
 
 struct piece 
 {
-    char *name;
-    int category;
+    char *name; // Any name
+    int category; // Number (predefined)
     char *color;
     char *texture;
-    int *matches;
+    int *matches; // Indexes of matches
 };
 
 void create_weardrobe(struct weardrobe** wear, int size);
 
-void add_item(struct weardrobe* wear, int position, char* name, int category, int *matches);
+void add_item(struct weardrobe* wear, int position, char* name, int category, char *color, char *texture, int *matches);
+
+void view_item(struct weardrobe* wear, int position);
 
 int find_match(struct weardrobe* wear, int position);
 
