@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
 class PrototypeState extends State<Prototype> {
   int _selectedPage = 1;
   List _pageOptions = [
-    Text('Forum', style: TextStyle(fontSize: 20)),
+    // Text('Forum', style: TextStyle(fontSize: 20)),
+    Forum(),
     HomePage(),
     Profile(),
   ];
@@ -64,6 +65,35 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class Forum extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          child: Column(children: [
+            Text('Skills',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text('', style: TextStyle(fontSize: 20)),
+            Text(' ', style: TextStyle(fontSize: 12)),
+          ]),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Colors.blue),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          padding: EdgeInsets.all(10),
+          margin: EdgeInsets.only(bottom: 10),
+          height: 150,
+          width: 150,
+          alignment: Alignment.center,
+        ),
+      ],
+    );
+  }
+}
+
 class Profile extends StatelessWidget {
   final List skills = [
     "Moving",
@@ -74,13 +104,15 @@ class Profile extends StatelessWidget {
   ];
   final String aboutme =
       "Hey, I am a cool cat that helps people with learning how to program and makes cool moves. To learn more about me, go to Scratch Website!";
-  final String pastworks = "I have worked as teaching assistant in a high prestige university. Also helped in the development of several games!";
+  final String pastworks =
+      "I have worked as teaching assistant in a high prestige university. Also helped in the development of several games!";
   final String contact = "scratchcat@gmail.com";
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Text('', style: TextStyle(fontSize: 30)),
-      Text('Scratch Cat', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+      Text('Scratch Cat',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
       Text('', style: TextStyle(fontSize: 30)),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,7 +131,8 @@ class Profile extends StatelessWidget {
           ),
           Container(
             child: Column(children: [
-              Text('Skills', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Text('Skills',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               Text('', style: TextStyle(fontSize: 20)),
               Text(
                   '- ' +
@@ -129,7 +162,8 @@ class Profile extends StatelessWidget {
       ),
       Container(
         child: Column(children: [
-          Text('About me', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          Text('About me',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           Text('', style: TextStyle(fontSize: 20)),
           Text(aboutme, style: TextStyle(fontSize: 12)),
         ]),
@@ -145,7 +179,8 @@ class Profile extends StatelessWidget {
       ), //NEEDS TO IMPROVE
       Container(
         child: Column(children: [
-          Text('Past Works', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          Text('Past Works',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           Text('', style: TextStyle(fontSize: 20)),
           Text(pastworks, style: TextStyle(fontSize: 12)),
         ]),
@@ -161,7 +196,8 @@ class Profile extends StatelessWidget {
       ),
       Container(
         child: Row(children: [
-          Text("Contact: ", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+          Text("Contact: ",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
           Text(contact, style: TextStyle(fontSize: 14))
         ]),
         decoration: BoxDecoration(
